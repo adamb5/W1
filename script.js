@@ -51,8 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: 'Python' },
             { name: 'React' },
             { name: 'Node.js' },
+            { name: 'PHP' },
             { name: 'TensorFlow' },
             { name: 'Unit Testing' },
+            { name: 'Kubernetes' },
             { name: 'HTML/CSS' },
             { name: 'SQL' }
         ];
