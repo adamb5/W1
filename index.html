@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Brook - Computer Science Student at WashU</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="logo">
+                <h1>Adam Brook</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Welcome to My Portfolio</h2>
+                <p>Hello! I'm Adam Brook, a passionate Computer Science student at Washington University in St. Louis. I'm dedicated to exploring the intersection of technology and innovation, always eager to learn new programming languages, frameworks, and methodologies that push the boundaries of what's possible in software development.</p>
+                <p>My journey in computer science began with a curiosity about how digital systems work, and it has evolved into a deep appreciation for problem-solving through code. At WashU, I've had the opportunity to work on various projects ranging from web applications to data structures and algorithms, each experience teaching me something valuable about software engineering principles.</p>
+                <p>Beyond academics, I enjoy contributing to open-source projects, participating in hackathons, and staying up-to-date with the latest trends in technology. I believe that continuous learning and practical application of knowledge are key to becoming an effective developer. Feel free to explore my work and reach out if you'd like to connect!</p>
+                <div class="hero-links">
+                    <a href="https://github.com/adamb5" class="btn primary">View GitHub</a>
+                    <a href="https://www.linkedin.com/in/abrook5/" class="btn secondary">Connect on LinkedIn</a>
+                    <a href="#projects" class="btn tertiary">See Projects</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Port.jpg" alt="Adam Brook - Computer Science student at Washington University in St. Louis" class="profile-image">
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>My Background</h3>
+                        <p>I'm currently pursuing my Bachelor's degree in Computer Science at Washington University in St. Louis, where I've gained a solid foundation in both theoretical computer science and practical programming skills.</p>
+                        
+                        <h3>Interests & Goals</h3>
+                        <ul class="interests-list">
+                            <li>Full-stack web development</li>
+                            <li>Machine learning and AI</li>
+                            <li>Data structures and algorithms</li>
+                            <li>Mobile app development</li>
+                            <li>Cybersecurity and ethical hacking</li>
+                            <li>Open-source contributions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="education-table">
+                        <h3>Education & Achievements</h3>
+                        <table class="achievements-table">
+                            <thead>
+                                <tr>
+                                    <th>Achievement</th>
+                                    <th>Institution</th>
+                                    <th>Year</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Dean's List</td>
+                                    <td>Washington University</td>
+                                    <td>2023</td>
+                                </tr>
+                                <tr>
+                                    <td>CS Programming Contest Winner</td>
+                                    <td>WashU Engineering</td>
+                                    <td>2023</td>
+                                </tr>
+                                <tr>
+                                    <td>Hackathon Participant</td>
+                                    <td>Various Events</td>
+                                    <td>2022-2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Dean's List</td>
+                                    <td>Washington University</td>
+                                    <td>2022</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Personal Portfolio Website</h3>
+                        <p>A responsive portfolio website built with HTML, CSS, and JavaScript, featuring modern design principles and interactive elements.</p>
+                        <a href="https://github.com" class="project-link">View Project →</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Student Management System</h3>
+                        <p>A full-stack application developed as part of my Software Engineering course, implementing CRUD operations and user authentication.</p>
+                        <a href="https://github.com" class="project-link">View Project →</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Data Visualization Dashboard</h3>
+                        <p>An interactive dashboard that visualizes climate change data using D3.js, featuring dynamic charts and filtering capabilities.</p>
+                        <a href="https://github.com" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <div class="container">
+                <h2>Technical Skills</h2>
+                <p>Here's an overview of the technologies and programming languages I work with:</p>
+            </div>
+        </section>
+    </main>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>I'm always open to discussing new opportunities, collaborations, or just chatting about technology!</p>
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Adam Brook. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/adamb5" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/abrook5/" target="_blank">LinkedIn</a>
+                    <a href="mailto:adambrook@example.com">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
