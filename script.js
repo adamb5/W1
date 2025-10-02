@@ -47,14 +47,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const skillsSection = document.querySelector('#skills .container');
         
         const skills = [
-            { name: 'JavaScript', level: 85 },
-            { name: 'Python', level: 80 },
-            { name: 'React', level: 75 },
-            { name: 'Node.js', level: 70 },
-            { name: 'Java', level: 80 },
-            { name: 'C++', level: 75 },
-            { name: 'HTML/CSS', level: 90 },
-            { name: 'SQL', level: 65 }
+            { name: 'JavaScript' },
+            { name: 'Python' },
+            { name: 'React' },
+            { name: 'Node.js' },
+            { name: 'TensorFlow' },
+            { name: 'Unit Testing' },
+            { name: 'HTML/CSS' },
+            { name: 'SQL' }
         ];
 
         const skillsGrid = document.createElement('div');
@@ -65,13 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
             skillCard.className = 'skill-card';
             
             skillCard.innerHTML = `
-                <div class="skill-info">
-                    <span class="skill-name">${skill.name}</span>
-                    <span class="skill-percentage">${skill.level}%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="${skill.level}"></div>
-                </div>
+                <div class="skill-name">${skill.name}</div>
             `;
             
             skillsGrid.appendChild(skillCard);
@@ -85,60 +79,46 @@ document.addEventListener('DOMContentLoaded', function() {
             skillsStyles.textContent = `
                 .skills-grid {
                     display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                    gap: 1.5rem;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 1rem;
                     margin-top: 2rem;
                 }
 
                 .skill-card {
                     background: white;
                     padding: 1.5rem;
-                    border-radius: 8px;
+                    border-radius: 12px;
                     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                    text-align: center;
+                    transition: all 0.3s ease;
+                    border: 2px solid transparent;
+                }
+
+                .skill-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+                    border-color: #2563eb;
                 }
 
                 .dark-mode .skill-card {
                     background: #374151;
                     color: #f9fafb;
+                    border-color: transparent;
                 }
 
-                .skill-info {
-                    display: flex;
-                    justify-content: space-between;
-                    margin-bottom: 0.5rem;
+                .dark-mode .skill-card:hover {
+                    border-color: #6366f1;
                 }
 
                 .skill-name {
+                    font-size: 1.1rem;
                     font-weight: 600;
                     color: #2563eb;
+                    margin: 0;
                 }
 
                 .dark-mode .skill-name {
                     color: #93c5fd;
-                }
-
-                .skill-percentage {
-                    font-size: 0.9rem;
-                    color: #6b7280;
-                }
-
-                .skill-bar {
-                    height: 8px;
-                    background-color: #e5e7eb;
-                    border-radius: 4px;
-                    overflow: hidden;
-                }
-
-                .skill-progress {
-                    height: 100%;
-                    background: linear-gradient(90deg, #2563eb, #6366f1);
-                    border-radius: 4px;
-                    width: 0;
-                    transition: width 2s ease-in-out;
-                }
-
-                .dark-mode .skill-bar {
-                    background-color: #4b5563;
                 }
             `;
             document.head.appendChild(skillsStyles);
@@ -147,17 +127,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const skillBars = entry.target.querySelectorAll('.skill-progress');
-                    skillBars.forEach(bar => {
-                        const width = bar.getAttribute('data-width');
+                    const skillCards = entry.target.querySelectorAll('.skill-card');
+                    skillCards.forEach((card, index) => {
                         setTimeout(() => {
-                            bar.style.width = width + '%';
-                        }, 200);
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, index * 100);
                     });
                     observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.5 });
+
+        skillsGrid.querySelectorAll('.skill-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
 
         observer.observe(skillsGrid);
     }
